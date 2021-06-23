@@ -5,6 +5,17 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
     // Add options here
+    // The sass and autoprefixer options are to prevent autoprefixer from having build issues with .css.map files
+    // https://github.com/kimroen/ember-cli-autoprefixer#note-on-using-with-ember-cli-sass
+    sassOptions: {
+      implementation: require('node-sass'),
+      sourceMapEmbed: true,
+    },
+    postcssOptions: {
+      compile: {
+          enabled: false,
+      },
+    },
   });
 
   // Use `app.import` to add additional libraries to the generated

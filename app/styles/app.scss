@@ -1,0 +1,166 @@
+@import 'ember-power-select';
+@import 'zycommon-web';
+
+// Header Styling
+.kHeader {
+    -webkit-font-smoothing: subpixel-antialiased;
+    align-items: center;
+    background-color: rgb(255,255,255);
+    display: flex;
+    flex-direction: row;
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    height: 56px;
+    justify-content: space-between;
+    line-height: 18.4px;
+    min-height: 56px;
+    position: fixed;
+    text-size-adjust: 100%;
+    top: 0px;
+    width: 100vw;
+    z-index: 5015;
+}
+
+.kLeftHeader{
+    -webkit-font-smoothing: subpixel-antialiased;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    height: 31px;
+    line-height: 18.4px;
+    margin-top: 5px;
+    text-size-adjust: 100%;
+    top: 0px;
+    width: calc(100%-502px);
+}
+
+.kLeftLogo{
+    align-items: center;
+    display: flex;
+    flex-grow: 1;
+}
+
+.kRightHeader{
+    -webkit-font-smoothing: subpixel-antialiased;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    height: 36px;
+    line-height: 18.4px;
+    padding-right: 16px;
+    text-size-adjust: 100%;
+    width: 267.859px;
+}
+
+// Default Page Layout
+.kPage {
+    -webkit-font-smoothing: subpixel-antialiased;
+    display: block;
+    font-family: sans-serif;
+    line-height: 18.4px;
+    margin-left: 0px;
+    margin-top: 56px;
+    text-size-adjust: 100%;
+}
+
+// Sign in Page
+.kSignInBody {
+    -webkit-font-smoothing: subpixel-antialiased;
+    background-color: $secondary;
+    display: block;
+    flex-grow: 1;
+    height: 548px;
+    line-height: 18.4px;
+    min-height: calc(100vh - 56px);
+    overflow-x: auto;
+    text-size-adjust: 100%;
+    transition-duration: 0.5s;
+    transition-property: margin-left;
+    width: 1280px;
+}
+
+.kSignInCard {
+    -webkit-font-smoothing: subpixel-antialiased;
+    background-color: #fff;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    height: 421px;
+    margin-top: 48px;
+    margin-right: auto;
+    margin-bottom: 32px;
+    margin-left: auto;
+    max-width: 378px;
+    min-height: 400px;
+}
+
+.kCardContent {
+    -webkit-font-smoothing: subpixel-antialiased;
+    display: grid;
+    flex-direction: column;
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    grid-template-rows: 1fr 30px 160px auto;
+    max-width: 330px;
+    min-width: 300px;
+}
+
+.kSignInCardHeader {
+    line-height: 43.7px;
+    margin-block-end: 32px;
+    margin-block-start: 0px;
+    margin-bottom: 32px;
+}
+
+// Library Page
+.kLibraryBody {
+    -webkit-font-smoothing: subpixel-antialiased;
+    background-color: transparent;
+    display: block;
+    font-family: sans-serif;
+    margin-top: 0px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 0px;
+    max-width: 1200px;
+    text-size-adjust: 100%;
+}
+
+.kSectionHeader {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 20.7px;
+    margin-block-end: 12.06px;
+    margin-block-start: 24px;
+    margin-bottom: 12.06px;
+    margin-inline-end: 0px;
+    margin-inline-start: 20px;
+    margin-left: 20px;
+    margin-right: 0px;
+    margin-top: 24px;
+}
+
+.kzyBookContainer {
+    background-color: #55c4f5;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.54);
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    font-family: Roboto, sans-serif;
+    height: 318px;
+    line-height: 18.4px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 12;
+    position: relative;
+    text-decoration-thickness: auto;
+    text-size-adjust: 100%;
+    width: 265px;
+}

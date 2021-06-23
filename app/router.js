@@ -1,9 +1,13 @@
 import EmberRouter from '@ember/routing/router';
-import config from 'onboarding/config/environment';
+import config from './config/environment';
 
-export default class Router extends EmberRouter {
-  location = config.locationType;
-  rootURL = config.rootURL;
-}
+const Router = EmberRouter.extend({
+  location: config.locationType,
+});
 
-Router.map(function () {});
+Router.map(function() {
+    this.route("sign-in");
+    this.route("library");
+});
+
+export default Router;

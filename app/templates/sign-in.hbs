@@ -1,0 +1,109 @@
+<div class="kPage">
+    <div class="kSignInBody">   
+        <nav class="zb-nav-menu ember-view hide-nav-menu">
+            <ul class="level-1"></ul>
+        </nav>
+        <ZbCard class="kSignInCard">
+            <div class="kCardContent">
+                <div class="flex-1">
+                    <h1 class="card-header-large kSignInCardHeader">Sign in</h1>
+                    {{#if this.session.attemptedTransition}}
+                        <div class="zb-message-container">{{this.attemptedTransitionMessage}}</div>
+                    {{/if}}
+                    <div class="zb-input-container info ember-view user-email">
+                        <ZbInput @autocomplete="email" @spellcheck="true" @placeholder="Email" class="ember-text-field ember-view zb-input" @ariaDescribedby="signInErrorMessage" @type="email" id="email" @value={{this.email}} />
+                    </div>
+                    <div class="zb-input-container info ember-view user-password">
+                        <ZbInput @autocomplete="current-password" @spellcheck="true" @placeholder="Password" class="ember-text-field ember-view zb-input" @ariaDescribedby="signInErrorMessage" @type="password" id="password" @value={{this.password}} />
+                    </div>
+
+                    {{!-- <ZbInput
+                        class="user-email"
+                        @a11yPlaceholder={{true}}
+                        @ariaDescribedby="signInErrorMessage"
+                        @ariaInvalid={{if this.errorMessage "true"}}
+                        @autocomplete="email"
+                        @enterAction={{perform this.signinTask}}
+                        @placeholder="Email"
+                        @type="email"
+                        @value={{this.email}}
+                    />
+                    <ZbInput
+                        class="user-password"
+                        @a11yPlaceholder={{true}}
+                        @ariaDescribedby="signInErrorMessage"
+                        @ariaInvalid={{if this.errorMessage "true"}}
+                        @autocomplete="current-password"
+                        @enterAction={{perform this.signinTask}}
+                        @placeholder="Password"
+                        @type="password"
+                        @value={{this.password}}
+                    /> --}}
+                </div>
+                <div class="flex-1 flex flex-row items-center error-message-container">
+                    {{#if this.errorMessage}}
+                        <div
+                            class="error text-xs font-normal my-auto"
+                            id="signInErrorMessage"
+                            role="alert"
+                        >
+                            {{this.errorMessage}}
+                        </div>
+                    {{/if}}
+                </div>
+                <div class="flex-1">
+                    <div class="disclaimer-text" style="margin-top: 20px; margin-bottom: 8px;">
+                        <small style="font-size: 80%;">
+                             By signing in, I agree to zyBook's 
+                            <a href="http://www.zybooks.com/terms-of-use/" class="link" target="_blank" rel="noopener noreferrer">terms of service</a>
+                             and 
+                            <a href="http://www.zybooks.com/privacy-policy/" class="link" target="_blank" rel="noopener noreferrer">privacy conditions</a>
+                            .     
+                        </small>
+                    </div>
+                    <button class="zb-button primary false raised full-width signin-button" onclick={{perform this.signinTask}} type="button" style="margin-top: 8px;">
+                        <span class="title">Sign In</span>
+                    </button>
+                    <div class="ancillary-actions-container" style="margin-top: 12px;">
+                        <a href="http://www.zybooks.com/forgot/" class="ember-view forgot-password-link zb-button primary" style="padding-left: 0px;">Forgot password? </a>
+                    </div>
+                </div>                
+            </div>
+        </ZbCard>
+        <footer class="zb-footer ember-view">
+            <ul>
+                <li>
+                    <a style="color: #fff;" href="http://twitter.com/zyBooks" rel="noopener noreferrer" target="_blank"> Twitter </a>
+                </li>
+                <li>
+                    <a style="color: #fff;" href="http://www.zybooks.com/news/" rel="noopener noreferrer" target="_blank"> Blog </a>
+                </li>
+                <li>
+                    <a style="color: #fff;" href="http://www.zybooks.com/about-us/" rel="noopener noreferrer" target="_blank"> About us </a>
+                </li>
+                <li>
+                    <a style="color: #fff;" href="http://www.zybooks.com/authoring-team/" rel="noopener noreferrer" target="_blank"> Authors </a>
+                </li>
+                <li>
+                    <a style="color: #fff;" href="http://www.zybooks.com/catalog/" rel="noopener noreferrer" target="_blank"> Catalog </a>
+                </li>
+                <li>
+                    <a style="color: #fff;" href="http://www.zybooks.com/research/" rel="noopener noreferrer" target="_blank"> Research </a>
+                </li>
+                <li>
+                    <a style="color: #fff;" href="http://www.zybooks.com/pricing/" rel="noopener noreferrer" target="_blank"> Pricing </a>
+                </li>
+                <li>
+                    <a style="color: #fff;" href="http://www.zybooks.com/careers/" rel="noopener noreferrer" target="_blank"> Careers </a>
+                </li>
+                <li>
+                    <a style="color: #fff;" href="http://www.zybooks.com/terms-of-use/" rel="noopener noreferrer" target="_blank"> Terms of service </a>
+                </li>
+                <li>
+                    <a style="color: #fff;" href="http://www.zybooks.com/privacy-policy/" rel="noopener noreferrer" target="_blank"> Privacy </a>
+                </li>
+            </ul>
+        </footer>
+    </div>
+</div>
+{{outlet}}
