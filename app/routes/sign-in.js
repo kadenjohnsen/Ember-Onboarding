@@ -12,7 +12,7 @@ export default class SigninRoute extends UnauthenticatedRoute {
     title = 'Sign in';
 
     // @property {String} routeIfAlreadyAuthenticated - The route to transition to after successful authentication.
-    routeIfAlreadyAuthenticated = '';
+    routeIfAlreadyAuthenticated = 'library';
 
     /**
         Constructor method for this component.

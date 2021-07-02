@@ -6,8 +6,9 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-    this.route("sign-in");
-    this.route("library");
+  this.route("sign-in");
+  this.route("library");
+  this.route('zybook', { path: 'zybook/:zybook_code' });
 });
 
 export default Router;

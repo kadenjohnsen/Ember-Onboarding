@@ -1,0 +1,70 @@
+<header class="kHeader">
+    <div class="kLeftHeader">
+        <div class="kLeftLogo zb-breadcrumbs hide-nav-menu-button ember-view">
+            <button class="zb-button grey false icon-button left menu-button hide-nav-menu-button" aria-label="Menu" aria-expanded="false" type="button"></button>
+            <div class="logo">
+                <a href="#" class="active ember-view">
+                    <img width="83px" height="22px" src="/zycommon-web/assets/logo.svg"/>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="kRightHeader">
+        {{#if this.session.isAuthenticated}}
+            <a class="zb-button" href="https://learn.zybooks.com/whats-new" target="_blank" rel="noopener noreferrer" style="font-weight: 300;">
+                <ZbIcon @icon="new_releases" style="margin-right: 8px;"/>
+                <span class="font-light ml-2 text-base">
+                    {{unless this.hideToolbarButtonText "What's New"}}
+                </span>
+            </a>
+            <a class="zb-button" href="https://discourse.zybooks.com/" target="_blank" rel="noopener noreferrer" style="font-weight: 300;">
+                <ZbIcon @icon="chat" style="margin-right: 8px;"/>
+                <span class="font-light ml-2 text-base">
+                    {{unless this.hideToolbarButtonText "Instructor forum"}}
+                </span>
+            </a>
+        
+            <a class="zb-button help-button" href="http://support.zybooks.com" target="_blank" rel="noopener noreferrer" style="font-weight: 300;">
+                <i class="zb-icon material-icons me grey" role="img" aria-label="help" style="margin-right: 8px;">help</i>
+                Help/FAQ
+            </a>
+            <RlDropdownContainer
+                class="zb-menu"
+                @onClose={{action (mut this.profileDropdownExpanded) false}}
+                @onOpen={{action (mut this.profileDropdownExpanded) true}}
+            >
+                <RlDropdownToggle
+                    aria-expanded={{if this.profileDropdownExpanded "true" "false"}}
+                    aria-label="Profile for {{this.session.currentUser.fullName}}"
+                    class="toolbar-menu-toggle"
+                >
+                    <ZbIcon aria-hidden="true" @icon="account_circle" />
+                    {{this.session.currentUser.fullName}}
+                    <ZbIcon aria-hidden="true" @icon="arrow_drop_down" />
+                </RlDropdownToggle>
+
+                <RlDropdown
+                    class="right-anchored"
+                    @closeOnChildClick="button"
+                    @tagName="ul"
+                >
+                    <li><button class="profile-button" type="button" {{action (mut this.modal_name) "profile"}}>My profile</button></li>
+                    <li><button class="signout-button" type="button" {{action "signoutClicked"}}>Sign out</button></li>
+                </RlDropdown>
+            </RlDropdownContainer>
+        {{else}}
+            <a class="zb-button help-button" href="http://support.zybooks.com" target="_blank" rel="noopener noreferrer" style="font-weight: 300;">
+                <i class="zb-icon material-icons me grey" role="img" aria-label="help" style="margin-right: 8px;">help</i>
+                Help/FAQ
+            </a>
+            {{#if (eq this.router.currentRouteName 'sign-in')}}
+                <a href='https://learn.zybooks.com/signup' class="logged-out-button zb-button raised">Create account</a>
+            {{else}}
+                <LinkTo @route='sign-in' class="logged-out-button zb-button raised">Sign in</LinkTo>
+            {{/if}}
+            
+        {{/if}}
+    </div>
+</header>
+
+{{outlet}}

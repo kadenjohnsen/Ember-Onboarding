@@ -1,0 +1,18 @@
+<div class="kPage">
+    <ZbCard class="simple-expandable-elements-card expand-card-sample">
+        <ul style="list-style-type: none;" class="table-of-contents-list split-toc">
+            {{#each this.chapters.arrangedContent as |chapter|}}
+                <ZbSimpleExpandable @title="{{chapter.number}}. {{chapter.title}}"  as |state|>
+                    <li class="kChapter">
+                        {{#if state.expanded}}
+                                {{#each chapter.sections as |section|}}
+                                    <li class="kSection">{{section.canonical_chapter_number}}.{{section.canonical_section_number}} {{section.title}}</li>
+                                {{/each}} 
+                        {{/if}}
+                    </li>
+                </ZbSimpleExpandable>
+            {{/each}}
+        </ul>
+    </ZbCard>
+</div>
+{{outlet}}

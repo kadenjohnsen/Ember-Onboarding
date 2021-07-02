@@ -113,7 +113,6 @@ export default class SigninController extends Controller {
     */
     @(task(function* () {
         set(this, 'errorMessage', null);
-        debugger;
         try {
             yield this.session.authenticate('authenticator:zyserver', { email: this.email, password: this.password });
 

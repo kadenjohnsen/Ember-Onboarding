@@ -1,0 +1,116 @@
+<div class="kPage">
+    <div class="kLibraryBody">
+        <section>
+            <h1 class="zybooks-section-header active-books-header kSectionHeader">Active class zyBooks</h1>
+            <div class={{concat "zybooks-container "}} data-test-selector="active-zybooks-container">
+                {{#if this.activeZybooks}}
+                    {{#each this.activeZybooks as |zybook|}}
+                        <LinkTo @route="zybook" @model={{zybook.zybook_code}}>
+                            <ZbZybook @zybookItem={{zybook}} @size='medium' />
+                        </LinkTo>
+                    {{/each}}
+                {{/if}}
+            </div>
+        </section>
+        <section>
+            <h1 class="zybooks-section-header active-books-header kSectionHeader">Evaluation zyBooks</h1>
+            <div class={{concat "zybooks-container "}} data-test-selector="evaluation-zybooks-container">
+                {{#if this.evaluationZybooks}}
+                    {{#each this.evaluationZybooks as |zybook|}}
+                        <LinkTo @route="zybook" @model={{zybook.zybook_code}}>
+                            <ZbZybook @zybookItem={{zybook}} @size='medium' />
+                        </LinkTo>
+                    {{/each}}
+                {{/if}}
+            </div>
+        </section>
+        <section>
+            <h1 class="zybooks-section-header active-books-header kSectionHeader">Kaden's Dark zeeBecks</h1>
+            <div class="kBookHolder">
+                <div class="zybooks-container medium">
+                    <LinkTo @route="zybook" @model='kadensdarkbooks'>
+                        <div class="kzyBookContainer" style="background-color: rgb(226, 195, 21);">
+                            <header>
+                                <img class="kzyBookHeader" src="/zycommon-web/assets/icons/secondary-thumb_up_outline-med.png">
+                            </header>
+                            <div class="kzyBookInfo">
+                                <div class="kPrimaryInfo">
+                                    <div class="kHeading" style="color: rgb(80, 43, 13);">Kaden's zeeBeck</div> 
+                                    <div class="kSnippet" style="color: rgb(80, 43, 13);">This zeeBeck is good, sail through it, enjoy the salty breeze.</div>  
+                                </div>
+                                <img class="kBookImg" src="/zycommon-web/assets/zybook-logos/kadensparrow.png">
+                            </div>
+                        </div>
+                    </LinkTo>
+                </div>
+                <div class="zybooks-container medium">
+                    <LinkTo @route="zybook" @model='kadensdarkbooks'>
+                        <div class="kzyBookContainer" style="background-color: rgb(15, 119, 15);">
+                            <header>
+                                <img class="kzyBookHeader" src="/zycommon-web/assets/icons/secondary-thumb_up_outline-med.png">
+                            </header>
+                            <div class="kzyBookInfo">
+                                <div class="kPrimaryInfo">
+                                    <div class="kHeading" style="color: #fff;">My Day with Chris</div> 
+                                    <div class="kSnippet" style="color: #fff;">A provacative and stimulating story of the magical day I spent with Chris.</div>  
+                                </div>
+                                <img class="kBookImg" src="/zycommon-web/assets/zybook-logos/myfriendchris.png" style="opacity: 0.2;">
+                            </div>
+                        </div>
+                    </LinkTo>
+                </div>
+                <div class="zybooks-container medium">
+                    <LinkTo @route="zybook" @model='kadensdarkbooks'>
+                        <div class="kzyBookContainer" style="background-color: rgb(0, 183, 255);">
+                            <header>
+                                <img class="kzyBookHeader" src="/zycommon-web/assets/icons/secondary-thumb_up_outline-med.png">
+                            </header>
+                            <div class="kzyBookInfo">
+                                <div class="kPrimaryInfo">
+                                    <div class="kHeading" style="color: black;">My Friends</div> 
+                                    <div class="kSnippet" style="color: black;">A list of my friends and enemies, keep them all as close as possible.</div>  
+                                </div>
+                                <img class="kBookImg" src="/zycommon-web/assets/zybook-logos/friends.png" style="opacity: 0.3; height: 250px;">
+                            </div>
+                        </div>
+                    </LinkTo>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="zb-footer ember-view">
+            <ul>
+                <li>
+                    <a href="http://twitter.com/zyBooks" rel="noopener noreferrer" target="_blank"> Twitter </a>
+                </li>
+                <li>
+                    <a href="http://www.zybooks.com/news/" rel="noopener noreferrer" target="_blank"> Blog </a>
+                </li>
+                <li>
+                    <a href="http://www.zybooks.com/about-us/" rel="noopener noreferrer" target="_blank"> About us </a>
+                </li>
+                <li>
+                    <a href="http://www.zybooks.com/authoring-team/" rel="noopener noreferrer" target="_blank"> Authors </a>
+                </li>
+                <li>
+                    <a href="http://www.zybooks.com/catalog/" rel="noopener noreferrer" target="_blank"> Catalog </a>
+                </li>
+                <li>
+                    <a href="http://www.zybooks.com/research/" rel="noopener noreferrer" target="_blank"> Research </a>
+                </li>
+                <li>
+                    <a href="http://www.zybooks.com/pricing/" rel="noopener noreferrer" target="_blank"> Pricing </a>
+                </li>
+                <li>
+                    <a href="http://www.zybooks.com/careers/" rel="noopener noreferrer" target="_blank"> Careers </a>
+                </li>
+                <li>
+                    <a href="http://www.zybooks.com/terms-of-use/" rel="noopener noreferrer" target="_blank"> Terms of service </a>
+                </li>
+                <li>
+                    <a href="http://www.zybooks.com/privacy-policy/" rel="noopener noreferrer" target="_blank"> Privacy </a>
+                </li>
+            </ul>
+        </footer>
+</div>
+{{outlet}}

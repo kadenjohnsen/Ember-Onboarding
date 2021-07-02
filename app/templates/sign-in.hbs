@@ -16,29 +16,6 @@
                     <div class="zb-input-container info ember-view user-password">
                         <ZbInput @autocomplete="current-password" @spellcheck="true" @placeholder="Password" class="ember-text-field ember-view zb-input" @ariaDescribedby="signInErrorMessage" @type="password" id="password" @value={{this.password}} />
                     </div>
-
-                    {{!-- <ZbInput
-                        class="user-email"
-                        @a11yPlaceholder={{true}}
-                        @ariaDescribedby="signInErrorMessage"
-                        @ariaInvalid={{if this.errorMessage "true"}}
-                        @autocomplete="email"
-                        @enterAction={{perform this.signinTask}}
-                        @placeholder="Email"
-                        @type="email"
-                        @value={{this.email}}
-                    />
-                    <ZbInput
-                        class="user-password"
-                        @a11yPlaceholder={{true}}
-                        @ariaDescribedby="signInErrorMessage"
-                        @ariaInvalid={{if this.errorMessage "true"}}
-                        @autocomplete="current-password"
-                        @enterAction={{perform this.signinTask}}
-                        @placeholder="Password"
-                        @type="password"
-                        @value={{this.password}}
-                    /> --}}
                 </div>
                 <div class="flex-1 flex flex-row items-center error-message-container">
                     {{#if this.errorMessage}}
