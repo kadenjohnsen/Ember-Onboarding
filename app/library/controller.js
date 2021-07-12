@@ -1,8 +1,5 @@
 import { computed } from '@ember/object';
-import { Promise } from 'rsvp';
-import { getOwner } from '@ember/application';
 import { alias } from '@ember/object/computed';
-import { inject as service } from '@ember/service';
 import Controller, { inject as controller } from '@ember/controller';
 
 
